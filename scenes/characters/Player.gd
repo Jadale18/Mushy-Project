@@ -28,6 +28,7 @@ func _physics_process(delta):
 	else:
 		$AnimatedSprite.speed_scale = 1.3
 		$AnimatedSprite.play("Walk")
+		
 	
 	if not is_on_floor():
 		$AnimatedSprite.play("Fall")

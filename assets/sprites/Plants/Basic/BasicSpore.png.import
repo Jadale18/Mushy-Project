@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BasicMush.png-97929e5d4937700c40929fdcabddc286.stex"
+path="res://.import/BasicSpore.png-6e5bf27363172c9c631acfa98b86d193.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/BasicMush.png"
-dest_files=[ "res://.import/BasicMush.png-97929e5d4937700c40929fdcabddc286.stex" ]
+source_file="res://assets/sprites/Plants/Basic/BasicSpore.png"
+dest_files=[ "res://.import/BasicSpore.png-6e5bf27363172c9c631acfa98b86d193.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
