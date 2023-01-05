@@ -57,3 +57,9 @@ speed_scale = 0.5
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 1 )
 shape = SubResource( 4 )
+
+[node name="PlayerArea" type="Area2D" parent="."]
+
+[node name="PAreaCollisonShape" type="CollisionShape2D" parent="PlayerArea"]
+position = Vector2( 0, 1 )
+shape = SubResource( 4 )

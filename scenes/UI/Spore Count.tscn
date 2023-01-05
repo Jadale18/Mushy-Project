@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/UI/Spore Count.gd" type="Script" id=1]
+
+[node name="Spore Count" type="Label"]
+margin_right = 111.0
+margin_bottom = 52.0
+rect_scale = Vector2( 2, 2 )
+text = "Spores = 0"
+align = 1
+valign = 1
+script = ExtResource( 1 )
