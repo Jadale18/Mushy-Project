@@ -10,3 +10,9 @@ func _ready():
 func _on_Harvest(spore):
 	count += spore
 	text = 'Spores = ' + var2str(count)
+
+
+func _on_Button_pressed():
+	if count >= 20:
+		count -= 20
+		text = 'Spores = ' + var2str(count)
