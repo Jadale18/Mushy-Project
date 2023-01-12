@@ -50,6 +50,18 @@ align = 1
 valign = 1
 autowrap = true
 
+[node name="RayCastBelow" type="RayCast2D" parent="."]
+position = Vector2( 0, 16 )
+enabled = true
+cast_to = Vector2( 0, 1 )
+collide_with_areas = true
+
+[node name="RayCastAbove" type="RayCast2D" parent="."]
+position = Vector2( 0, -17 )
+enabled = true
+cast_to = Vector2( 0, 1 )
+collide_with_areas = true
+
 [connection signal="body_entered" from="." to="." method="_on_BasicMush_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_BasicMush_body_exited"]
 [connection signal="timeout" from="ProductionTimer" to="." method="_on_ProductionTimer_timeout"]
