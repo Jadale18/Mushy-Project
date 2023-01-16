@@ -35,13 +35,13 @@ func _on_BasicMush_body_exited(body):
 func place():
 	position.x = get_global_mouse_position().x
 	position.y = int(get_global_mouse_position().y) - (int(get_global_mouse_position().y) % 32) + 16
-	if $RayCastBelow.get_collider():
-		if $RayCastBelow.get_collider().get("name") == 'FirstTiles':
+	if $RayCastBelow.get_collider() and $RayCastBelow2.get_collider():
+		if $RayCastBelow.get_collider().get("name") == 'FirstTiles' and $RayCastBelow2.get_collider().get("name") == 'FirstTiles':
 			placing_possible = true
 	else:
 		placing_possible = false
 	
-	if $RayCastAbove.get_collider():
+	if $RayCastAbove.get_collider() or $RayCastAbove2.get_collider():
 		placing_possible = false
 	if placing_on_another_mush:
 		placing_possible = false
