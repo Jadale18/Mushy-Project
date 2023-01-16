@@ -2,7 +2,6 @@ extends Label
 
 var count = 0
 export var mushybought :PackedScene
-var placing = false
 
 func _ready():
 	for node in get_tree().get_root().get_child(0).get_children():
@@ -13,6 +12,8 @@ func _on_Harvest(spore):
 	count += spore
 	text = 'Spores = ' + var2str(count)
 
+func _on_Place():
+	$Button.visible = true
 
 func _on_Button_pressed():
 	if count >= 5:
@@ -21,15 +22,11 @@ func _on_Button_pressed():
 		var new_mushy = mushybought.instance()
 		get_parent().add_child(new_mushy)
 		new_mushy.connect("harvest", self, "_on_Harvest")
+		new_mushy.connect("place", self, "_on_Place")
 		new_mushy.position = get_global_mouse_position()
 		new_mushy.placing = true
-		placing = true
+		$Button.visible = false
 		
 		
 
-func _process(delta):
-	$Button.visible = not placing
-	
-	if placing:
-		if Input.is_action_just_pressed("left_click"):
-			placing = false
+

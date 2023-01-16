@@ -5,7 +5,9 @@ var can_harvest = false
 var placing = false
 var placing_possible = false
 var placing_on_another_mush = false
+var placing_count = 0
 signal harvest(amt)
+signal place
 
 
 func _process(delta):
@@ -53,14 +55,20 @@ func place():
 	if Input.is_action_just_pressed("left_click") and placing_possible:
 		placing = false
 		placing_possible = false
+		emit_signal("place")
 	
 
 
 func _on_BasicMush_area_entered(area):
 	if 'BasicMush' in area.name:
+		placing_count += 1
 		placing_on_another_mush = true
+
 
 
 func _on_BasicMush_area_exited(area):
 	if 'BasicMush' in area.name and placing_on_another_mush:
-		placing_on_another_mush = false
+		placing_count -= 1
+		if placing_count == 0:
+			placing_on_another_mush = false
+
