@@ -35,8 +35,13 @@ func _on_BasicMush_body_exited(body):
 		can_harvest = false
 
 func place():
-	position.x = get_global_mouse_position().x
-	position.y = int(get_global_mouse_position().y) - (int(get_global_mouse_position().y) % 32) + 16
+	if rotation_degrees in [0, 180]:
+		position.x = get_global_mouse_position().x
+		position.y = int(get_global_mouse_position().y) - (int(get_global_mouse_position().y) % 32) + 16
+	else:
+		position.x = int(get_global_mouse_position().x) - (int(get_global_mouse_position().x) % 32) + 16
+		position.y = get_global_mouse_position().y
+	check_rotation()
 	if $RayCastBelow.get_collider() and $RayCastBelow2.get_collider():
 		if $RayCastBelow.get_collider().get("name") == 'FirstTiles' and $RayCastBelow2.get_collider().get("name") == 'FirstTiles':
 			placing_possible = true
@@ -57,7 +62,11 @@ func place():
 		placing_possible = false
 		emit_signal("place")
 	
-
+func check_rotation():
+	if Input.is_action_just_pressed("rotate_placement"):
+		rotation_degrees += 90
+		if rotation_degrees == 360:
+			rotation_degrees = 0
 
 func _on_BasicMush_area_entered(area):
 	if 'BasicMush' in area.name:
