@@ -24,12 +24,12 @@ func _on_ProductionTimer_timeout():
 	$ProducedLabel.text = 'Harvest ' + var2str(spores) + ' spore(s)'
 
 
-func _on_BasicMush_body_entered(body):
+func _on_BigBasicMush_body_entered(body):
 	if body.name == 'Player':
 		$ProducedLabel.visible = true
 		can_harvest = true
 
-func _on_BasicMush_body_exited(body):
+func _on_BigBasicMush_body_exited(body):
 	if body.name == 'Player':
 		$ProducedLabel.visible = false
 		can_harvest = false
@@ -68,16 +68,15 @@ func check_rotation():
 		if rotation_degrees == 360:
 			rotation_degrees = 0
 
-func _on_BasicMush_area_entered(area):
+func _on_BigBasicMush_area_entered(area):
 	if 'Mush' in area.name:
 		placing_count += 1
 		placing_on_another_mush = true
 
 
 
-func _on_BasicMush_area_exited(area):
+func _on_BigBasicMush_area_exited(area):
 	if 'Mush' in area.name and placing_on_another_mush:
 		placing_count -= 1
 		if placing_count == 0:
 			placing_on_another_mush = false
-

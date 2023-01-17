@@ -1,6 +1,6 @@
 extends Label
 
-var count = 30
+var count = 0
 export var mushybought :PackedScene
 
 func _ready():
