@@ -6,7 +6,7 @@ var placing = false
 var placing_possible = false
 var placing_on_another_mush = false
 var placing_count = 0
-signal harvest(amt)
+signal harvest(amt, type)
 signal place
 
 
@@ -14,7 +14,7 @@ func _process(delta):
 	if placing:
 		place()
 	elif can_harvest and Input.is_action_just_pressed("Interact") and spores > 0:
-		emit_signal("harvest", spores)
+		emit_signal("harvest", spores, "basic")
 		spores = 0
 		$ProducedLabel.text = 'No spores to harvest :('
 	

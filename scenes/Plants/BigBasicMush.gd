@@ -14,7 +14,7 @@ func _process(delta):
 	if placing:
 		place()
 	elif can_harvest and Input.is_action_just_pressed("Interact") and spores > 0:
-		emit_signal("harvest", spores)
+		emit_signal("harvest", spores, 'basic')
 		spores = 0
 		$ProducedLabel.text = 'No spores to harvest :('
 	
