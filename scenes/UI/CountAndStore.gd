@@ -12,7 +12,12 @@ func _ready():
 func _on_Harvest(spore, type):
 	if type == 'basic':
 		basic += spore
-		$GridContainer/BasicSporeCount.text = var2str(basic)
+		$SporeCount/BasicSporeCount.text = var2str(basic)
 	elif type == 'wbutton':
 		wbutton += spore
-		$GridContainer/WhiteButtonSporeCount.text = var2str(wbutton)
+		$SporeCount/WhiteButtonSporeCount.text = var2str(wbutton)
+
+
+func _on_BasicBuy_pressed():
+	if basic > 5:
+		pass
