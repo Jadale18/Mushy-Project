@@ -13,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = -1024.0
 margin_bottom = -600.0
+theme = ExtResource( 7 )
 script = ExtResource( 3 )
 basicMushBought = ExtResource( 4 )
 bigBasicBought = ExtResource( 5 )
@@ -109,6 +110,16 @@ margin_right = 147.0
 margin_bottom = 198.0
 theme = ExtResource( 7 )
 text = "WhiteButton: 20"
+
+[node name="RotationMessage" type="Label" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 458.0
+margin_top = 1.0
+margin_right = 558.0
+margin_bottom = 31.0
+text = "'R' to rotate"
 
 [connection signal="pressed" from="Store/BasicBuy" to="." method="_on_BasicBuy_pressed"]
 [connection signal="pressed" from="Store/BigBasicBuy" to="." method="_on_BigBasicBuy_pressed"]

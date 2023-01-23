@@ -35,4 +35,6 @@ autostart = true
 position = Vector2( 880, 464 )
 autostart = true
 
-[node name="CountAndStore" parent="." instance=ExtResource( 4 )]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CountAndStore" parent="CanvasLayer" instance=ExtResource( 4 )]

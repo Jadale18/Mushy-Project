@@ -34,6 +34,7 @@ func _on_Place(cost, type):
 	elif type == 'wbutton':
 		wbutton -= cost
 		$SporeCount/WhiteButtonSporeCount.text = var2str(wbutton)
+	$RotationMessage.visible = false
 
 func _on_BasicBuy_pressed():
 	if basic >= 5:
@@ -44,6 +45,7 @@ func _on_BasicBuy_pressed():
 		new_mushy.position = get_global_mouse_position()
 		new_mushy.placing = true
 		$Store.visible = false
+		$RotationMessage.visible = true
 
 
 func _on_BigBasicBuy_pressed():
@@ -55,6 +57,7 @@ func _on_BigBasicBuy_pressed():
 		new_mushy.position = get_global_mouse_position()
 		new_mushy.placing = true
 		$Store.visible = false
+		$RotationMessage.visible = true
 
 
 func _on_WhiteButtonBuy_pressed():
@@ -66,3 +69,4 @@ func _on_WhiteButtonBuy_pressed():
 		new_mushy.position = get_global_mouse_position()
 		new_mushy.placing = true
 		$Store.visible = false
+		$RotationMessage.visible = true
