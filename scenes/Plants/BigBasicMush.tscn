@@ -45,7 +45,6 @@ shape = SubResource( 6 )
 
 [node name="ProductionTimer" type="Timer" parent="."]
 wait_time = 0.3
-autostart = true
 
 [node name="ProducedLabel" type="Label" parent="."]
 visible = false

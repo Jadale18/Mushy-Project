@@ -35,6 +35,7 @@ script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 5 )
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -43,7 +44,6 @@ shape = SubResource( 6 )
 
 [node name="ProductionTimer" type="Timer" parent="."]
 wait_time = 0.3
-autostart = true
 
 [node name="ProducedLabel" type="Label" parent="."]
 visible = false

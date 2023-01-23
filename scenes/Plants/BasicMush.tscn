@@ -36,7 +36,6 @@ position = Vector2( 0, 9.5 )
 shape = SubResource( 4 )
 
 [node name="ProductionTimer" type="Timer" parent="."]
-autostart = true
 
 [node name="ProducedLabel" type="Label" parent="."]
 visible = false

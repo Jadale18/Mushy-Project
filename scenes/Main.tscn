@@ -21,14 +21,18 @@ tile_data = PoolIntArray( 262175, 0, 8, 262176, 0, 10, 262177, 0, 10, 262178, 0,
 
 [node name="BasicMush" parent="." instance=ExtResource( 3 )]
 position = Vector2( 719, 496 )
+autostart = true
 
 [node name="BasicMush2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 592, 496 )
+autostart = true
 
 [node name="BigBasicMush" parent="." instance=ExtResource( 5 )]
 position = Vector2( 336, 496 )
+autostart = true
 
 [node name="WhiteButtonMush" parent="." instance=ExtResource( 6 )]
 position = Vector2( 880, 464 )
+autostart = true
 
 [node name="CountAndStore" parent="." instance=ExtResource( 4 )]

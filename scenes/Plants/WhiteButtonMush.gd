@@ -8,7 +8,11 @@ var placing_on_another_mush = false
 var placing_count = 0
 signal harvest(amt, type)
 signal place(cost, type)
+export var autostart = false
 
+func _ready():
+	if autostart:
+		$ProductionTimer.start()
 
 func _process(delta):
 	if placing:
@@ -55,6 +59,7 @@ func place():
 	if Input.is_action_just_pressed("left_click") and placing_possible:
 		placing = false
 		placing_possible = false
+		$ProductionTimer.start()
 		emit_signal("place", 20, "wbutton")
 		
 func check_rotation():

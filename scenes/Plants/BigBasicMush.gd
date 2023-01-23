@@ -8,13 +8,15 @@ var placing_on_another_mush = false
 var placing_count = 0
 signal harvest(amt)
 signal place
+export var autostart = false
 
+func _ready():
+	if autostart:
+		$ProductionTimer.start()
 
 func _process(delta):
 	if placing:
 		place()
-		if not $ProductionTimer.is_stopped():
-			$ProductionTimer.stop()
 	elif can_harvest and Input.is_action_just_pressed("Interact") and spores > 0:
 		emit_signal("harvest", spores, 'basic')
 		spores = 0
