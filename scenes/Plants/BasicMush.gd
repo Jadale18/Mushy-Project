@@ -7,7 +7,7 @@ var placing_possible = false
 var placing_on_another_mush = false
 var placing_count = 0
 signal harvest(amt, type)
-signal place
+signal place(cost, type)
 
 
 func _process(delta):
@@ -48,8 +48,15 @@ func place():
 	else:
 		placing_possible = false
 	
-	if $RayCastAbove.get_collider() or $RayCastAbove2.get_collider():
-		placing_possible = false
+	if $RayCastAbove.get_collider():
+		if $RayCastAbove.get_collider().get("name") == 'FirstTiles':
+			placing_possible = false
+			
+	if $RayCastAbove2.get_collider():
+		if $RayCastAbove2.get_collider().get("name") == 'FirstTiles':
+			placing_possible = false
+		
+		
 	if placing_on_another_mush:
 		placing_possible = false
 		
@@ -60,7 +67,7 @@ func place():
 	if Input.is_action_just_pressed("left_click") and placing_possible:
 		placing = false
 		placing_possible = false
-		emit_signal("place")
+		emit_signal("place", 5, "basic")
 	
 func check_rotation():
 	if Input.is_action_just_pressed("rotate_placement"):

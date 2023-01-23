@@ -13,6 +13,8 @@ signal place
 func _process(delta):
 	if placing:
 		place()
+		if not $ProductionTimer.is_stopped():
+			$ProductionTimer.stop()
 	elif can_harvest and Input.is_action_just_pressed("Interact") and spores > 0:
 		emit_signal("harvest", spores, 'basic')
 		spores = 0
@@ -47,9 +49,15 @@ func place():
 			placing_possible = true
 	else:
 		placing_possible = false
-	
-	if $RayCastAbove.get_collider() or $RayCastAbove2.get_collider():
-		placing_possible = false
+		
+	if $RayCastAbove.get_collider():
+		if $RayCastAbove.get_collider().get("name") == 'FirstTiles':
+			placing_possible = false
+			
+	if $RayCastAbove2.get_collider():
+		if $RayCastAbove2.get_collider().get("name") == 'FirstTiles':
+			placing_possible = false
+			
 	if placing_on_another_mush:
 		placing_possible = false
 		
@@ -60,7 +68,8 @@ func place():
 	if Input.is_action_just_pressed("left_click") and placing_possible:
 		placing = false
 		placing_possible = false
-		emit_signal("place")
+		$ProductionTimer.start()
+		emit_signal("place", 20, 'basic')
 	
 func check_rotation():
 	if Input.is_action_just_pressed("rotate_placement"):
