@@ -2,7 +2,7 @@
 
 [ext_resource path="res://assets/sprites/Plants/WhiteButton/WhiteButtonMush.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Plants/WhiteButtonMush.gd" type="Script" id=2]
-[ext_resource path="res://assets/Theme/new_theme.tres" type="Theme" id=3]
+[ext_resource path="res://assets/theme/new_theme.tres" type="Theme" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
