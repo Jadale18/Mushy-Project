@@ -7,7 +7,7 @@ export var bigBasicBought :PackedScene
 export var whiteButtonBought :PackedScene
 
 func _ready():
-	for node in get_tree().get_root().get_child(0).get_children():
+	for node in get_tree().get_root().get_child(0).get_child(2).get_children():
 		if "Mush" in node.name:
 			node.connect("harvest", self, "_on_Harvest")
 
